@@ -13,10 +13,15 @@ var special = ['@', '%', '+', '/', "'", '!', '#', '$', '^', '?', ':', ',', ')', 
 function questions() {
   var isValid = false;
   do {
+    // variable length is a prompt
     var length = prompt("Choose password length between 8 and 128 characters");
+    // variable askNumbers is a confirm prompt
     var askNumbers = confirm("Do you want your password to include numbers?");
+    // variable askLowerCase is a confirm prompt to ask about including a number
     var askLowerCase = confirm("Do you want your password to include lower case letters?");
+    // variable askUpperCase is  a confirm prompt to ask about including an upper case
     var askUpperCase = confirm("Do you want your password to include upper case letters?");
+    // variable askSpecial asks if you want to add special characters
     var askSpecial = confirm("Do you want your password to include special characters?");
     var responses = {
       length: length,
@@ -25,6 +30,7 @@ function questions() {
       askUpperCase: askUpperCase,
       askSpecial: askSpecial
     } 
+    // requirement that length of password is between 8 and 128
     if((length < 8)||(length > 128))
     alert("Choose number between 8 and 128");
     else if((!askNumbers)&&(!askLowerCase)&&(!askUpperCase)&&(!askSpecial))
